@@ -52,6 +52,17 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'django_extensions',
 
+    # allauth
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.twitter',
+    'allauth.socialaccount.providers.linkedin',
+
+
 ]
 
 MIDDLEWARE = [
@@ -179,3 +190,19 @@ MEDIA_URL = '/media/'
 LOGIN_URL = '/'
 
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# ------------------------ allauth configuration ---------------------------
+SITE_ID = 1
+
+AUTHENTICATION_BACKENDS = (
+
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+)
+
+LOGIN_URL = 'base_app:login'
+LOGIN_REDIRECT_URL = 'base_app:profile'
+LOGOUT_REDIRECT_URL = 'base_app:login'
