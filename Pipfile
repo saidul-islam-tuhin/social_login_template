@@ -13,7 +13,7 @@ name = "pypi"
 
 backcall = "==0.1.0"
 decorator = "==4.3.0"
-django = "==1.11.6"
+django = "==1.11.28"
 django-debug-toolbar = "==1.9.1"
 django-extensions = "==1.7.3"
 ipython-genutils = "==0.2.0"
